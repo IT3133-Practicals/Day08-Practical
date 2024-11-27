@@ -103,8 +103,10 @@ This practical demonstrates how to use `react-router-dom` for handling routing i
 ### Example of the Login Page and Dashboard Screen:
 
 - **Login Page**:
+![Login](https://github.com/user-attachments/assets/cfa3e6ca-34c5-477e-8a4a-022b1ac9f701)
 
 - **Dashboard Page**:
+![Dashboard](https://github.com/user-attachments/assets/43af3294-c34b-4be1-a65d-a1699d445c1f)
 
 
 ## Conclusion 📝
