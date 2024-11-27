@@ -1,4 +1,13 @@
+import { useNavigate } from "react-router-dom";
+import { useState } from "react";
+
 export default function Login() {
+    const navigate = useNavigate();
+
+    const authenticate=()=>{
+        navigate('/dashboard')
+    }
+    
     return(
         <div>
             <h1>Login Page</h1>
@@ -16,7 +25,7 @@ export default function Login() {
                         <input type="text" name="password"/>
                     </td>
                 </tr>
-                <button>Login</button>
+                <button onClick={authenticate}>Login</button>
             </table>
         </div>
     )
