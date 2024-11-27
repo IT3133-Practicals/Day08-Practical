@@ -8,7 +8,13 @@ import AboutUs from './components/AboutUs';
 function App() {
   return (
     <div className="App">
-      
+      <Router>
+        <Routes>
+          <Route path="/home" element={<Home/>} />
+          <Route path="/contact" element={<ContactUs/>} />
+          <Route path="/about" element={<AboutUs/>} />
+        </Routes>
+      </Router>
     </div>
   );
 }
