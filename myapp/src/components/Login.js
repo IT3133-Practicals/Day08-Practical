@@ -4,6 +4,21 @@ import { useState } from "react";
 export default function Login() {
     const navigate = useNavigate();
 
+    const [credential,setCredential] = useState({
+        username: "",
+        password: "",
+        error: ""
+    })
+
+    const change=(e)=>{
+        e.preventDefault();
+        const {name,value} = e.target;
+        setCredential((prev)=>({
+            ...prev,
+            [name]: value
+        }))
+    }
+
     const authenticate=()=>{
         navigate('/dashboard')
     }
@@ -16,16 +31,18 @@ export default function Login() {
                 <tr>
                     <td aligh="right">Username: </td>
                     <td>
-                        <input type="text" name="username"/>
+                        <input type="text" name="username" onChange={change}/>
                     </td>
                 </tr>
                 <tr>
                     <td aligh="right">Password: </td>
                     <td>
-                        <input type="text" name="password"/>
+                        <input type="text" name="password" onChange={change}/>
                     </td>
                 </tr>
                 <button onClick={authenticate}>Login</button>
+                <br></br>
+                <p>{credential.error}</p>
             </table>
         </div>
     )
