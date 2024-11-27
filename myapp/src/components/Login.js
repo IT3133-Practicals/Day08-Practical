@@ -1,5 +1,6 @@
 import { useNavigate } from "react-router-dom";
 import { useState } from "react";
+import { studentData } from "../data/data";
 
 export default function Login() {
     const navigate = useNavigate();
@@ -21,7 +22,19 @@ export default function Login() {
 
     const authenticate=(e)=>{
         e.preventDefault()
-        navigate('/dashboard')
+        const user = studentData.find(
+            (user)=>
+                user.username === credential.username && user.password === credential.password
+        )
+        if(user) {
+            setCredential({username: "", password: "", error: ""});
+            navigate('/dashboard');
+        } else {
+            setCredential((prev)=>({
+                ...prev,
+                error: "Please check your username & password"
+            }))
+        }
     }
     
     return(
