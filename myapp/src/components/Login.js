@@ -51,7 +51,7 @@ export default function Login() {
                 <tr>
                     <td aligh="right">Password: </td>
                     <td>
-                        <input type="text" name="password" onChange={change}/>
+                        <input type="password" name="password" onChange={change}/>
                     </td>
                 </tr>
                 <button onClick={authenticate}>Login</button>
